@@ -4,11 +4,17 @@ public class Application
 {
 	public static void main( String[] args )
 	{
-		int arr[] = {1,2,3,4,5};
+		int arr[][] = {{2,7,9},{3,6,1},{7,4,2}};
 		
-		for(int arr1 : arr ) {
-			System.out.println(arr1);
+		for(int[] arr1 : arr) {
+			for(int ele : arr1) {
+				System.out.println(ele);}
+			System.out.println();
+			
+			
+				
 		}
+		
 		
 		
 	}
