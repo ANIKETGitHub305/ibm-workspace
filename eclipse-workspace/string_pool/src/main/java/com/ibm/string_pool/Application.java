@@ -4,12 +4,13 @@ public class Application
 {
 	public static void main(String[] args) {
 		
-		StringBuffer s = new StringBuffer("Hello");
 		
-		System.out.println("Before Adding the String: " + s);
-		s.append("Aniket");
-		
-		System.out.println("After Adding apend: "  +  s);
+        StringBuilder sb = new StringBuilder("My Name");
+        System.out.println("Initial StringBuilder: " + sb);
+
+        // Append a string to the StringBuilder
+        sb.append(" is Aniket.");
+        System.out.println("After append: " + sb);
 
     }
 
