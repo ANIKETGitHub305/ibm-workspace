@@ -3,23 +3,36 @@ package com.ibm.string_pool;
 public class Application
 {
 	public static void main(String[] args) {
-        // String literals (stored in the string pool)
-        String str1 = "Hello";
-        String str2 = "Hello";
+		// 1. Creating strings
+        String name = "Alice";
+        String greeting = "Hello";
 
-        // New String object (not in the string pool, stored in heap)
-        String str3 = new String("Hello");
+        // 2. Concatenation (joining strings)
+        String message = greeting + ", " + name + "!";
+        System.out.println("Message: " + message);
 
-        // Check references using ==
-        System.out.println("str1 == str2: " + (str1 == str2)); // true (same pool reference)
-        System.out.println("str1 == str3: " + (str1 == str3)); // false (different memory locations)
+        // 3. String length
+        System.out.println("Length of message: " + message.length());
 
-        // Check content using equals()
-        System.out.println("str1.equals(str3): " + str1.equals(str3)); // true (same content)
+        // 4. Substring (part of the string)
+        String part = message.substring(7, 12); // from index 7 to 11
+        System.out.println("Substring (7 to 11): " + part);
 
-        // Interning str3 to move it to the pool
-        String str4 = str3.intern();
-        System.out.println("str1 == str4: " + (str1 == str4)); // true (both from the pool now)
+        // 5. Changing case
+        System.out.println("Uppercase: " + message.toUpperCase());
+        System.out.println("Lowercase: " + message.toLowerCase());
+
+        // 6. Comparing strings
+        String anotherGreeting = "hello";
+        boolean isEqual = greeting.equals(anotherGreeting);
+        boolean isEqualIgnoreCase = greeting.equalsIgnoreCase(anotherGreeting);
+
+        System.out.println("Are they equal (case-sensitive)? " + isEqual);
+        System.out.println("Are they equal (ignore case)? " + isEqualIgnoreCase);
+
+        // 7. Checking if a string contains a word
+        System.out.println("Does message contain 'Alice'? " + message.contains("Alice"));
+
     }
 
 }
