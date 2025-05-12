@@ -1,11 +1,6 @@
-function f1() {
-    console.log('f1()');
+//Functions executions Examples
+function execute(operation) {
+    console.log(operation(2, 4));
 }
-f1();
-var f2 = function () {
-    console.log('f2()');
-    "";
-};
-f2();
-var f3 = function () { return console.log('f3()'); };
-f3();
+execute(function (num1, num2) { return num1 + num2; });
+execute(function (num1, num2) { return (num1 + num2) / 2; });
