@@ -1,6 +1,10 @@
-//Functions executions Examples
-function execute(operation) {
-    console.log(operation(2, 4));
-}
-execute(function (num1, num2) { return num1 + num2; });
-execute(function (num1, num2) { return (num1 + num2) / 2; });
+var numbers = [1, 2, 3, 4, 5];
+numbers.push(6);
+console.log(numbers);
+var fruits = ['apple', 'Banana', 'Orange'];
+fruits.push("mango");
+console.log(fruits);
+var colors = ['red', 'green', 'blue'];
+var mixed = ['Hello', 42, "world", 100];
+mixed.push(200);
+mixed.push('typescript');
