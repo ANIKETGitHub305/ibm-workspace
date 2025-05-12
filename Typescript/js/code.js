@@ -1,8 +1,7 @@
-// Prompot and Alert example
-var userInput = window.prompt('please Enter your Input');
-if (userInput !== null) {
-    window.alert("Hello, ".concat(userInput, "!"));
-}
-else {
-    window.alert("You clicked Cancel or CLosed the Prompt.");
+//DOM manipulation example
+var demoElement = document.getElementById("demo");
+if (demoElement) {
+    demoElement.style.fontSize = "60px";
+    demoElement.style.color = "red";
+    demoElement.style.background = "black";
 }

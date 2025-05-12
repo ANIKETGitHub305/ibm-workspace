@@ -1,8 +1,7 @@
-// Prompot and Alert example
-let userInput: string | null = window.prompt('please Enter your Input')
-
-if(userInput !== null) {
-    window.alert(`Hello, ${userInput}!`);
-} else {
-    window.alert("You clicked Cancel or CLosed the Prompt.")
+//DOM manipulation example
+const demoElement = document.getElementById("demo");
+if (demoElement) {
+    demoElement.style.fontSize = "60px";
+    demoElement.style.color = "red";
+    demoElement.style.background = "black";
 }
