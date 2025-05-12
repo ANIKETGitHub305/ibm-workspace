@@ -1,24 +1,14 @@
-//Console Example
-console.info('You are awesome');
+//Grouping COnsole Example
+function f1() {
+    console.group("Group 1");
+    console.groupCollapsed();
+    console.info("Getting Started");
+    console.error("Something Went wrong");
+    console.log('logging this');
+    console.groupEnd();
 
-console.log('IBM Technology');
-console.log({
-    name:"Aniket Sahoo",
-    age : 23,
-});
-
-console.log(['apple','Banana','Orange']);
-
-console.error('Something is wrong');
+    console.info('Bye')
 
 
-console.log(['Orange','Apple','Grave']);
-
-console.assert(2>3,"it cannot be");
-
-console.clear();
-
-console.warn('I usually get Ignored');
-
-console.time();
-console.timeEnd();
+}
+f1();
