@@ -1,35 +1,46 @@
 package com.ibm.string_pool;
 
+import java.util.LinkedList;
+
 public class Application
 {
 	public static void main(String[] args) {
 		
 		
-		// Create a list of strings
-        List<String> stringList = new ArrayList<>();
-        stringList.add("Apple");
-        stringList.add("Banana");
-        stringList.add("Cherry");
+		LinkedList<String> result = new LinkedList<String>();
 
-        // Print the list
-        System.out.println("String List: " + stringList);
+        // Add elements to the collection.
+        result.add("B");
+        result.add("C");
+        result.add("D");
+        result.add("X");
+        result.add("Y");
+        result.add("Z");
+        result.add("A");
 
-        // Create a list of integers
-        List<Integer> integerList = new ArrayList<>();
-        integerList.add(1);
-        integerList.add(2);
-        integerList.add(3);
+        result.add(1, "A2");
 
-        // Print the list
-        System.out.println("Integer List: " + integerList);
+        System.out.println("Original contents of result: " + result);
 
-        // Create a list of objects
-        List<Object> objectList = new ArrayList<>();
-        objectList.add("Apple");
-        objectList.add(1);
-        objectList.add(true);
+        // Remove elements from the collection.
+        result.remove("F");
+        result.remove(2);
 
-        // Print the list
-        System.out.println("Object List: " + objectList);
+        System.out.println("Contents of result after deletion: "
+                + result);
+
+        // Remove first and last elements.
+        result.removeFirst();
+        result.removeLast();
+
+        System.out.println("result after deleting first and last: "
+                + result);
+
+        // Get and set a value.
+        String val = result.get(2);
+        result.set(2, val + " Changed");
+
+        System.out.println("result after change: " + result);
     }
+
 }

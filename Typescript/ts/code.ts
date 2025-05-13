@@ -1,23 +1,39 @@
-// 1️⃣ Basic Tuple
-let basicTuple: [string, number] = ["Alice", 30];
-console.log("Basic Tuple:", basicTuple); // ["Alice", 30]
 
-// 2️⃣ Optional Tuple Elements
-let optionalTuple1: [string, number?] = ["Bob"];
-let optionalTuple2: [string, number?] = ["Bob", 25];
-console.log("Optional Tuple 1:", optionalTuple1); // ["Bob"]
-console.log("Optional Tuple 2:", optionalTuple2); // ["Bob", 25]
+// Define the interface Employee
+interface Employee {
+  name: string;
+  age: number;
+  department: string;
+  salary: number;
+  calculateSalary(): number;
+}
 
-// 3️⃣ Tuple with Rest Elements
-let restTuple: [string, ...number[]] = ["Charlie", 85, 90, 95];
-console.log("Tuple with Rest Elements:", restTuple); // ["Charlie", 85, 90, 95]
+// Implement the interface Employee by a function
+function createEmployee(name: string, age: number, department: string, salary: number): Employee {
+  return {
+    name,
+    age,
+    department,
+    salary,
+    calculateSalary: () => salary * 1.1,
+  };
+}
 
-// 4️⃣ Named Tuple (for clarity, mainly used with documentation or destructuring)
-type Employee = [name: string, age: number, department?: string];
-let employee: Employee = ["Diana", 28, "HR"];
-console.log("Named Tuple:", employee); // ["Diana", 28, "HR"]
+// Create an employee object using the function
+const employee1 = createEmployee('John Doe', 30, 'Sales', 50000);
+console.log(employee1.name); // John Doe
+console.log(employee1.calculateSalary()); // 55000
 
-// 5️⃣ Destructuring Tuple
-const [empName, empAge, empDept] = employee;
-console.log(`Destructured -> Name: ${empName}, Age: ${empAge}, Dept: ${empDept}`);
-// Output: Name: Diana, Age: 28, Dept: HR
+// Implement the interface Employee by a class
+class EmployeeClass implements Employee {
+  constructor(public name: string, public age: number, public department: string, public salary: number) {}
+
+  calculateSalary(): number {
+    return this.salary * 1.1;
+  }
+}
+
+// Create an employee object using the class
+const employee2 = new EmployeeClass('Jane Doe', 25, 'Marketing', 60000);
+console.log(employee2.name); // Jane Doe
+console.log(employee2.calculateSalary()); // 66000
